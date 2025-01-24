@@ -23,8 +23,8 @@ import lombok.Setter;
 public class Expenses {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long expenseId;
 
     @Column(name = "expense_name", nullable = false)
     private String expenseName;
@@ -40,6 +40,6 @@ public class Expenses {
     private String description;
     
     @Column(name = "userId", nullable = false)
-    private String userId;
+    private Long userId;
 
 }

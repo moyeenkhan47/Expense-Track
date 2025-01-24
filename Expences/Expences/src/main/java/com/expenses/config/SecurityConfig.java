@@ -44,7 +44,7 @@ public class SecurityConfig {
                 return corsConfig;
             }))
             .authorizeHttpRequests(auth -> auth
-                .requestMatchers( "/authenticate","/auth/register","/api/unlock").permitAll() // Permit these routes without authentication
+                .requestMatchers( "/authenticate","/auth/register","/api/unlock","/**").permitAll() // Permit these routes without authentication
                 .anyRequest().authenticated()) // Other requests require authentication
             .exceptionHandling(ex -> ex.authenticationEntryPoint(point)) // Custom entry point for unauthorized access
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Stateless session
